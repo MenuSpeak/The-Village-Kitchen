@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>द विलेज किचन | ग्रामीण स्वाद की क्रांति</title>
+    <title>The Village Kitchen - Complete Editable Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -169,7 +169,6 @@
             font-size: 16px;
         }
 
-        /* SARE NOTES KA SECTION */
         .all-notes-section {
             background: rgba(212, 175, 55, 0.06);
             border-radius: 20px;
@@ -240,7 +239,6 @@
             margin-top: 10px;
             text-align: center;
         }
-        /* Cart Styles */
         .cart-container {
             position: fixed;
             bottom: 20px;
@@ -376,18 +374,29 @@
             font-size: 12px;
             margin-top: 30px;
         }
+        .edit-mode-badge {
+            background: #ff9800;
+            color: #0b0b0d;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
 
-    <!-- HEADER --> 
+    <!-- ============================================= -->
+    <!-- HEADER - यहाँ से एडिट करें -->
+    <!-- ============================================= -->
     <div class="cafe-header">
-        <!-- <img src="logo.jpeg" alt="The Village Kitchen Logo" style="width:400px; height:auto; display:block; margin:0 auto;" onerror="this.style.display='none'"> -->
-        <div class="cafe-name">द विलेज किचन</div>
+    <img src="logo.jpeg" alt="The Village Kitchen Logo" style="width:400px; height:auto; display:block; margin:0 auto;" onerror="this.style.display='none'">
+        <div class="cafe-name" id="restaurantName">द विलेज किचन</div>
         <div class="cafe-subtitle">शुद्ध स्वाद, पूर्ण स्वच्छता</div>
-        <div class="address">📍 अमोल पेट्रोल पंप के सामने, बसमत रोड, परभणी</div>
-        <div class="mobile">📞 +91 8600200404</div>
+        <div class="address" id="addressText">📍 अमोल पेट्रोल पंप के सामने, बसमत रोड, परभणी</div>
+        <div class="mobile" id="mobileText">📞 +91 8600200404</div>
         <div class="veg-nonveg">
             <div class="veg"><span class="symbol"></span> VEG</div>
             <div class="nonveg"><span class="symbol"></span> NON VEG</div>
@@ -398,28 +407,13 @@
     <div class="search">
         <input type="text" id="search" placeholder="🔍 Search dishes...">
     </div>
-    <div class="tabs-scroll" id="tabs">
-        <button class="tab active" data-cat="all">🏠 Gaon ka Swaad</button>
-        <button class="tab" data-cat="DRINKS">🥤 Kulhad Drinks</button>
-        <button class="tab" data-cat="VEG_SOUP">🥣 Veg Shorba</button>
-        <button class="tab" data-cat="NON_VEG_SOUP">🍲 Non-Veg Shorba</button>
-        <button class="tab" data-cat="VEG_STARTER">🔥 Veg Angithi</button>
-        <button class="tab" data-cat="NON_VEG_STARTER">🍗 Shikari Chatore</button>
-        <button class="tab" data-cat="CHINESE_VEG">🍜 Veg Chinese</button>
-        <button class="tab" data-cat="CHINESE_NON_VEG">🍱 Non-Veg Chinese</button>
-        <button class="tab" data-cat="VEG_MAIN">🥘 Dadi ki Rasoi</button>
-        <button class="tab" data-cat="NON_VEG_MAIN">🏺 Mitti ke Bartan</button>
-        <button class="tab" data-cat="BREADS">🫓 Chulhe se Roti</button>
-        <button class="tab" data-cat="RICE">🍚 Bhaat & Khichdi</button>
-    </div>
+    <div class="tabs-scroll" id="tabs"></div>
 
     <!-- MENU GRID -->
     <div class="menu-grid" id="menuGrid"></div>
 
-    <!-- ============================================================== -->
-    <!-- SARE NOTES SECTION -->
-    <!-- ============================================================== -->
-    <div class="all-notes-section">
+    <!-- NOTES SECTION - यहाँ से एडिट करें -->
+    <div class="all-notes-section" id="notesSection">
         <div class="note-heading">📢 परभणी में स्वाद की नई क्रांति! 🌿 द विलेज किचन 🍲</div>
         
         <div class="note-card">
@@ -441,47 +435,22 @@
         </div>
 
         <div class="note-card">
-            <h4>🏮 रेस्टोरेंट के बैनर आइडिया (दीवारों पर लिखवाएं)</h4>
-            <p>✨ "चूल्हे की रोटी, हंडी का मटन... भूल जाओगे शहर के सारे बर्तन!"</p>
-            <p>✨ "यहाँ मसालों का शोर नहीं, स्वाद का जादू बोलता है।"</p>
-            <p>✨ "स्वाद ऐसा कि दादी माँ की याद आ जाए।"</p>
-        </div>
-
-        <div class="note-card">
-            <h4>🎬 Instagram Reel आइडिया (वायरल के लिए)</h4>
-            <p><strong>वीडियो:</strong> चूल्हे पर पकता मटन/चिकन → फिर थाली में सूप, स्टार्टर, रोटियां</p>
-            <p><strong>म्यूजिक:</strong> ट्रेंडिंग फोक/विलेज थीम</p>
-            <p><strong>टेक्स्ट:</strong> "सब कुछ खाओ, जो मन आए वो चखो - सिर्फ ₹400 में! 'The Village Kitchen' पर"</p>
-        </div>
-
-        <div class="note-card">
-            <h4>⭐ Review Reward</h4>
-            <p>जो ग्राहक Google या Instagram पर पोस्ट करेगा, उसे <strong>स्पेशल 'पान' मुफ्त</strong> दिया जाएगा।</p>
-        </div>
-
-        <div class="note-card">
             <h4>🌿 Zero-Crockery Concept - हमारी विशेषता</h4>
             <p>🍃 <strong>केला पत्ता परोस:</strong> हर थाली ताज़ा<br>
             ☕ <strong>मिट्टी के कुल्हड़:</strong> छाछ और सूप में सोंधी खुशबू<br>
             🪵 <strong>लकड़ी के चम्मच:</strong> डिस्पोजेबल और हाइजीनिक</p>
             <p>🔥 <strong>ग्रैंड ओपनिंग ऑफर:</strong> पूरा विलेज मेनू चखें — मात्र <span class="highlight">₹400/- प्रति व्यक्ति (Unlimited Tasting!)</span></p>
         </div>
-
-        <div class="note-card" style="background: rgba(212,175,55,0.15);">
-            <p style="text-align: center; font-size: 1.1rem;"><strong>परंपरा का हाथ, स्वच्छता का साथ। आज ही अपने परिवार के साथ पधारें!</strong></p>
-        </div>
     </div>
-
-    <img src="img.jpeg" alt="Village Kitchen" style="width:400px; height:auto; display:block; margin:0 auto;" onerror="this.style.display='none'">
 
     <!-- GOOGLE MAPS LINK -->
     <div style="text-align: center; margin: 10px 0 20px;">
-        <a href="https://maps.app.goo.gl/Tqo5rBwXAyN5wvLJ6" target="_blank" class="map-link">
+        <a href="#" id="mapLink" target="_blank" class="map-link">
             🗺️ Google Maps पर खोलें - नेविगेशन के लिए क्लिक करें
         </a>
     </div>
 
-    <div class="footer">© द विलेज किचन | ग्रामीण स्वाद, पूर्ण स्वच्छता | परभणी का परिवारिक रेस्टोरेंट</div>
+    <div class="footer" id="footerText">© द विलेज किचन | ग्रामीण स्वाद, पूर्ण स्वच्छता | परभणी का परिवारिक रेस्टोरेंट</div>
 </div>
 
 <!-- CART BUTTON -->
@@ -523,10 +492,43 @@
         <button class="btn-clear" id="clearCartBtn">Clear Cart</button>
     </div>
 </div>
-  
+
 <script>
-    // All menu items with proper img paths (keeping original names as requested)
-    const menuItems = [
+// ============================================================
+// 📝 यहाँ से सब कुछ EDIT करें - पूरा मेन्यू, कीमतें, फोन नंबर, नाम सब कुछ
+// ============================================================
+
+// ---------- 🏷️ रेस्टोरेंट की जानकारी (यहाँ से बदलें) ----------
+const RESTAURANT_INFO = {
+    name: "द विलेज किचन",
+    phone: "+91 8600200404",      // 📞 फोन नंबर बदलें
+    phoneRaw: "918600200404",      // WhatsApp के लिए (बिना + के)
+    address: "📍 अमोल पेट्रोल पंप के सामने, बसमत रोड, परभणी",
+    mapLink: "https://maps.app.goo.gl/Tqo5rBwXAyN5wvLJ6",
+    footer: "© द विलेज किचन | ग्रामीण स्वाद, पूर्ण स्वच्छता | परभणी का परिवारिक रेस्टोरेंट"
+};
+
+// ---------- 🎨 थीम के कलर (यहाँ से बदलें) ----------
+// नीचे दिए RGB/Hex codes बदलकर पूरी वेबसाइट का कलर थीम चेंज करें
+const THEME_COLORS = {
+    gold: "#d4af37",      // सोने का रंग
+    goldLight: "#ffcc66",  // हल्का सोना  
+    green: "#4CAF50",      // हरा
+    orange: "#ff9800"      // नारंगी
+};
+
+// Apply theme colors
+document.documentElement.style.setProperty('--gold1', THEME_COLORS.gold);
+document.documentElement.style.setProperty('--gold2', THEME_COLORS.goldLight);
+document.documentElement.style.setProperty('--green', THEME_COLORS.green);
+document.documentElement.style.setProperty('--orange', THEME_COLORS.orange);
+
+// ---------- 🍔 पूरा मेन्यू (यहाँ से ADD/EDIT/DELETE करें) ----------
+// नया आइटम add करने के लिए: { id: नया_नंबर, cat: "CATEGORY", name: "नाम", desc: "विवरण", price: कीमत, tags: ["Veg","NonVeg"], img: "img/photo.jpg" }
+// price सिर्फ NUMBER डालें (₹ साइन अपने आप लग जाएगा)
+// tags में ["Veg"] या ["Non-Veg"] लिखना जरूरी है
+
+const MENU_ITEMS = [
 {"id": 1, "cat": "DRINKS", "name": "कुल्हड़ मसाला छाछ", "desc": "कुल्हड़ में परोसे जाने वाले पारंपरिक पेय", "tags": ["Veg", "Welcome Drink"], "img": "img/masala_chaas.jpeg"},
 {"id": 2, "cat": "DRINKS", "name": "नींबू पुदीना शरबत", "desc": "शक्कर/गुड़ का मिलाप", "tags": ["Veg", "Welcome Drink"], "img": "img/nimbu_sharbat.jpeg"},
 {"id": 3, "cat": "VEG_SOUP", "name": "टोमेटो सूप", "desc": "ताज़ा टमाटर का शोरबा", "tags": ["Veg", "Soup"], "img": "img/tomato_soup.jpeg"},
@@ -590,174 +592,49 @@
 {"id": 60, "cat": "RICE", "name": "मसाला खिचड़ी", "desc": "देसी घी और पापड़ के साथ", "tags": ["Veg", "Rice", "Healthy"], "img": "img/masala_khichdi.jpeg"},
 {"id": 61, "cat": "RICE", "name": "प्लेन राइस", "desc": "सीधे चूल्हे से", "tags": ["Veg", "Rice"], "img": "img/plain_rice.jpeg"},
 {"id": 62, "cat": "RICE", "name": "चिकन दम बिरयानी", "desc": "परंपरा का असली स्वाद", "tags": ["Non-Veg", "Rice", "Biryani"], "img": "img/chicken_biryani.jpeg"},
+
+ ];
+
+// ---------- 📂 कैटेगरी (TABS - यहाँ से एडिट करें) ----------
+// नई कैटेगरी add करने के लिए: { id: "UNIQUE_ID", name: "दिखने वाला नाम", icon: "आइकॉन" }
+const CATEGORIES = [
+    { id: "all", name: "🏠 Gaon ka Swaad", icon: "🏠" },
+    { id: "DRINKS", name: "🥤 Kulhad Drinks", icon: "🥤" },
+    { id: "VEG_SOUP", name: "🥣 Veg Shorba", icon: "🥣" },
+    { id: "NON_VEG_SOUP", name: "🍲 Non-Veg Shorba", icon: "🍲" },
+    { id: "VEG_STARTER", name: "🔥 Veg Angithi", icon: "🔥" },
+    { id: "NON_VEG_STARTER", name: "🍗 Shikari Chatore", icon: "🍗" },
+    { id: "CHINESE_VEG", name: "🍜 Veg Chinese", icon: "🍜" },
+    { id: "CHINESE_NON_VEG", name: "🍱 Non-Veg Chinese", icon: "🍱" },
+    { id: "VEG_MAIN", name: "🥘 Dadi ki Rasoi", icon: "🥘" },
+    { id: "NON_VEG_MAIN", name: "🏺 Mitti ke Bartan", icon: "🏺" },
+    { id: "BREADS", name: "🫓 Chulhe se Roti", icon: "🫓" },
+    { id: "RICE", name: "🍚 Bhaat & Khichdi", icon: "🍚" }
+];
+
+// ============================================================
+// 🔧 नीचे कुछ मत बदलें - कोड अपने आप काम करेगा
+// ============================================================
+
+// Apply restaurant info to page
+document.getElementById('restaurantName').innerText = RESTAURANT_INFO.name;
+document.getElementById('addressText').innerHTML = RESTAURANT_INFO.address;
+document.getElementById('mobileText').innerHTML = `📞 ${RESTAURANT_INFO.phone}`;
+document.getElementById('mapLink').href = RESTAURANT_INFO.mapLink;
+document.getElementById('footerText').innerHTML = RESTAURANT_INFO.footer;
+
+let cart = [];
+let currentFilter = "all";
+let searchQuery = ""; 
+let deliveryType = "dinein";
+
+// Render Tabs
+function renderTabs() {
+    const tabsContainer = document.getElementById("tabs");
+    tabsContainer.innerHTML = CATEGORIES.map(cat => `
+        <button class="tab ${cat.id === 'all' ? 'active' : ''}" data-cat="${cat.id}">${cat.name}</button>
+    `).join('');
     
-    ];
-
-    let cart = [];
-    let currentFilter = "all";
-    let searchQuery = ""; 
-    let deliveryType = "dinein";
-
-    function renderMenu() {
-        let filtered = menuItems.filter(item => {
-            if(currentFilter !== "all" && item.cat !== currentFilter) return false;
-            if(searchQuery && !item.name.toLowerCase().includes(searchQuery) && !item.desc.toLowerCase().includes(searchQuery)) return false;
-            return true;
-        });
-        const grid = document.getElementById("menuGrid");
-        if(filtered.length === 0) {
-            grid.innerHTML = '<p style="text-align:center; color:var(--muted);">No items found</p>';
-            return;
-        }
-        grid.innerHTML = filtered.map(item => `
-            <div class="card">
-                <div class="thumb">
-                    <img src="${item.img}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=\'fallback-icon\'>🍽️ ${item.name.substring(0,2)}</div>'">
-                </div>
-                <div class="dish">${item.name}</div>
-                <div class="desc">${item.desc}</div>
-                <div style="display:flex; gap:6px; margin:8px 0; flex-wrap:wrap;">${item.tags.map(t=>`<span style="font-size:11px; background:rgba(255,255,255,0.05); padding:2px 8px; border-radius:20px;">${t}</span>`).join('')}</div>
-                <div class="card-footer">
-                    <div class="price">₹${item.price}</div>
-                    <button class="btn-primary" onclick="addToCart(${item.id}, event)">Add to Cart</button>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    function updateCartUI() {
-        const count = cart.reduce((sum, i) => sum + i.qty, 0);
-        document.getElementById("cartCount").innerText = count;
-        const total = cart.reduce((sum, i) => sum + (parseInt(i.price) * i.qty), 0);
-        document.getElementById("cartTotalAmount").innerText = total;
-        const container = document.getElementById("cartItemsList");
-        if(cart.length === 0) {
-            container.innerHTML = "Cart is empty";
-            return;
-        }
-        container.innerHTML = cart.map(item => `
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.1);">
-                <div><strong>${item.name}</strong><br/>₹${item.price}</div>
-                <div>
-                    <button onclick="updateQty(${item.id}, -1)" style="background:rgba(255,255,255,0.1); border:none; padding:5px 10px; border-radius:20px; color:white; cursor:pointer;">-</button>
-                    <span style="margin:0 10px;">${item.qty}</span>
-                    <button onclick="updateQty(${item.id}, 1)" style="background:rgba(255,255,255,0.1); border:none; padding:5px 10px; border-radius:20px; color:white; cursor:pointer;">+</button>
-                    <button onclick="removeFromCart(${item.id})" style="background:none; border:none; color:#e74c3c; margin-left:10px; cursor:pointer;">🗑️</button>
-                </div>
-            </div>
-        `).join('');
-        updateCustomerSummary();
-    }
-
-    function updateCustomerSummary() {
-        const summaryDiv = document.getElementById("customerSummary");
-        if(deliveryType === "dinein") {
-            const table = document.getElementById("tableNumber").value.trim();
-            if(table) {
-                summaryDiv.innerHTML = `<strong>🏠 Dine-in</strong><br/>Table: ${table}`;
-                summaryDiv.classList.add("active");
-            } else {
-                summaryDiv.classList.remove("active");
-            }
-        } else {
-            const name = document.getElementById("customerName").value.trim();
-            const mobile = document.getElementById("customerMobile").value.trim();
-            const address = document.getElementById("customerAddress").value.trim();
-            if(name || mobile || address) {
-                summaryDiv.innerHTML = `<strong>🚚 Home Delivery</strong><br/>Name: ${name}<br/>Mobile: ${mobile}<br/>Address: ${address}`;
-                summaryDiv.classList.add("active");
-            } else {
-                summaryDiv.classList.remove("active");
-            }
-        }
-    }
-
-    window.selectDelivery = (type) => {
-        deliveryType = type;
-        const dineinBtn = document.getElementById("dineinBtn");
-        const deliveryBtn = document.getElementById("deliveryBtn");
-        const dineinForm = document.getElementById("dineinForm");
-        const deliveryForm = document.getElementById("deliveryForm");
-        
-        if(type === "dinein") {
-            dineinBtn.classList.add("active");
-            deliveryBtn.classList.remove("active");
-            dineinForm.classList.add("active");
-            deliveryForm.classList.remove("active");
-        } else {
-            dineinBtn.classList.remove("active");
-            deliveryBtn.classList.add("active");
-            dineinForm.classList.remove("active");
-            deliveryForm.classList.add("active");
-        }
-        updateCustomerSummary();
-    };
-
-    window.addToCart = (id, event) => {
-        const item = menuItems.find(i => i.id === id);
-        const existing = cart.find(i => i.id === id);
-        if(existing) existing.qty++;
-        else cart.push({...item, qty: 1});
-        updateCartUI();
-        const btn = event.target;
-        btn.innerText = "✓ Added";
-        setTimeout(() => btn.innerText = "Add to Cart", 800);
-    };
-
-    window.updateQty = (id, change) => {
-        const item = cart.find(i => i.id === id);
-        if(item) {
-            item.qty += change;
-            if(item.qty <= 0) cart = cart.filter(i => i.id !== id);
-            updateCartUI();
-        }
-    };
-
-    window.removeFromCart = (id) => {
-        cart = cart.filter(i => i.id !== id);
-        updateCartUI();
-    };
-
-    document.getElementById("cartBtn").onclick = () => {
-        document.getElementById("cartModal").classList.add("open");
-        updateCustomerSummary();
-    };
-    document.getElementById("closeCart").onclick = () => document.getElementById("cartModal").classList.remove("open");
-    document.getElementById("clearCartBtn").onclick = () => { cart = []; updateCartUI(); };
-    
-    document.getElementById("whatsappBtn").onclick = () => {
-        if(cart.length === 0) return alert("Cart is empty!");
-        
-        let isValid = true;
-        if(deliveryType === "dinein") {
-            const table = document.getElementById("tableNumber").value.trim();
-            if(!table) { isValid = false; alert("Please enter table number"); }
-        } else {
-            const name = document.getElementById("customerName").value.trim();
-            const mobile = document.getElementById("customerMobile").value.trim();
-            const address = document.getElementById("customerAddress").value.trim();
-            if(!name || !mobile || !address) { isValid = false; alert("Please fill all delivery details"); }
-        }
-        if(!isValid) return;
-        
-        let msg = "Hello! I want to order from The Village Kitchen:\n\n";
-        if(deliveryType === "dinein") {
-            msg += `🏠 Dine-in\nTable: ${document.getElementById("tableNumber").value.trim()}\n\n`;
-        } else {
-            msg += `🚚 Home Delivery\nName: ${document.getElementById("customerName").value.trim()}\nMobile: ${document.getElementById("customerMobile").value.trim()}\nAddress: ${document.getElementById("customerAddress").value.trim()}\n\n`;
-        }
-        msg += `Order Details:\n`;
-        let total = 0;
-        cart.forEach(i => { msg += `• ${i.name} x${i.qty} = ₹${parseInt(i.price) * i.qty}\n`; total += parseInt(i.price) * i.qty; });
-        msg += `\nTotal: ₹${total}\n\nThank you!`;
-        window.open(`https://wa.me/918600200404?text=${encodeURIComponent(msg)}`, "_blank");
-    };
-
-    document.getElementById("tableNumber")?.addEventListener("input", updateCustomerSummary);
-    document.getElementById("customerName")?.addEventListener("input", updateCustomerSummary);
-    document.getElementById("customerMobile")?.addEventListener("input", updateCustomerSummary);
-    document.getElementById("customerAddress")?.addEventListener("input", updateCustomerSummary);
-
     document.querySelectorAll(".tab").forEach(btn => {
         btn.onclick = () => {
             document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
@@ -766,11 +643,175 @@
             renderMenu();
         };
     });
-    document.getElementById("search").oninput = (e) => {
-        searchQuery = e.target.value.toLowerCase();
-        renderMenu();
-    };
+}
+
+function renderMenu() {
+    let filtered = MENU_ITEMS.filter(item => {
+        if(currentFilter !== "all" && item.cat !== currentFilter) return false;
+        if(searchQuery && !item.name.toLowerCase().includes(searchQuery) && !item.desc.toLowerCase().includes(searchQuery)) return false;
+        return true;
+    });
+    const grid = document.getElementById("menuGrid");
+    if(filtered.length === 0) {
+        grid.innerHTML = '<p style="text-align:center; color:var(--muted);">No items found</p>';
+        return;
+    }
+    grid.innerHTML = filtered.map(item => `
+        <div class="card">
+            <div class="thumb">
+                <img src="${item.img}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=\\'fallback-icon\\'>🍽️ ${item.name.substring(0,2)}</div>'">
+            </div>
+            <div class="dish">${item.name}</div>
+            <div class="desc">${item.desc}</div>
+            <div style="display:flex; gap:6px; margin:8px 0; flex-wrap:wrap;">${item.tags.map(t=>`<span style="font-size:11px; background:rgba(255,255,255,0.05); padding:2px 8px; border-radius:20px;">${t}</span>`).join('')}</div>
+            <div class="card-footer">
+                <div class="price">₹${item.price}</div>
+                <button class="btn-primary" onclick="addToCart(${item.id}, event)">Add to Cart</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function updateCartUI() {
+    const count = cart.reduce((sum, i) => sum + i.qty, 0);
+    document.getElementById("cartCount").innerText = count;
+    const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+    document.getElementById("cartTotalAmount").innerText = total;
+    const container = document.getElementById("cartItemsList");
+    if(cart.length === 0) {
+        container.innerHTML = "Cart is empty";
+        return;
+    }
+    container.innerHTML = cart.map(item => `
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.1);">
+            <div><strong>${item.name}</strong><br/>₹${item.price}</div>
+            <div>
+                <button onclick="updateQty(${item.id}, -1)" style="background:rgba(255,255,255,0.1); border:none; padding:5px 10px; border-radius:20px; color:white; cursor:pointer;">-</button>
+                <span style="margin:0 10px;">${item.qty}</span>
+                <button onclick="updateQty(${item.id}, 1)" style="background:rgba(255,255,255,0.1); border:none; padding:5px 10px; border-radius:20px; color:white; cursor:pointer;">+</button>
+                <button onclick="removeFromCart(${item.id})" style="background:none; border:none; color:#e74c3c; margin-left:10px; cursor:pointer;">🗑️</button>
+            </div>
+        </div>
+    `).join('');
+    updateCustomerSummary();
+}
+
+function updateCustomerSummary() {
+    const summaryDiv = document.getElementById("customerSummary");
+    if(deliveryType === "dinein") {
+        const table = document.getElementById("tableNumber").value.trim();
+        if(table) {
+            summaryDiv.innerHTML = `<strong>🏠 Dine-in</strong><br/>Table: ${table}`;
+            summaryDiv.classList.add("active");
+        } else {
+            summaryDiv.classList.remove("active");
+        }
+    } else {
+        const name = document.getElementById("customerName").value.trim();
+        const mobile = document.getElementById("customerMobile").value.trim();
+        const address = document.getElementById("customerAddress").value.trim();
+        if(name || mobile || address) {
+            summaryDiv.innerHTML = `<strong>🚚 Home Delivery</strong><br/>Name: ${name}<br/>Mobile: ${mobile}<br/>Address: ${address}`;
+            summaryDiv.classList.add("active");
+        } else {
+            summaryDiv.classList.remove("active");
+        }
+    }
+}
+
+window.selectDelivery = (type) => {
+    deliveryType = type;
+    const dineinBtn = document.getElementById("dineinBtn");
+    const deliveryBtn = document.getElementById("deliveryBtn");
+    const dineinForm = document.getElementById("dineinForm");
+    const deliveryForm = document.getElementById("deliveryForm");
+    
+    if(type === "dinein") {
+        dineinBtn.classList.add("active");
+        deliveryBtn.classList.remove("active");
+        dineinForm.classList.add("active");
+        deliveryForm.classList.remove("active");
+    } else {
+        dineinBtn.classList.remove("active");
+        deliveryBtn.classList.add("active");
+        dineinForm.classList.remove("active");
+        deliveryForm.classList.add("active");
+    }
+    updateCustomerSummary();
+};
+
+window.addToCart = (id, event) => {
+    const item = MENU_ITEMS.find(i => i.id === id);
+    const existing = cart.find(i => i.id === id);
+    if(existing) existing.qty++;
+    else cart.push({...item, qty: 1});
+    updateCartUI();
+    const btn = event.target;
+    btn.innerText = "✓ Added";
+    setTimeout(() => btn.innerText = "Add to Cart", 800);
+};
+
+window.updateQty = (id, change) => {
+    const item = cart.find(i => i.id === id);
+    if(item) {
+        item.qty += change;
+        if(item.qty <= 0) cart = cart.filter(i => i.id !== id);
+        updateCartUI();
+    }
+};
+
+window.removeFromCart = (id) => {
+    cart = cart.filter(i => i.id !== id);
+    updateCartUI();
+};
+
+document.getElementById("cartBtn").onclick = () => {
+    document.getElementById("cartModal").classList.add("open");
+    updateCustomerSummary();
+};
+document.getElementById("closeCart").onclick = () => document.getElementById("cartModal").classList.remove("open");
+document.getElementById("clearCartBtn").onclick = () => { cart = []; updateCartUI(); };
+
+document.getElementById("whatsappBtn").onclick = () => {
+    if(cart.length === 0) return alert("Cart is empty!");
+    
+    let isValid = true;
+    if(deliveryType === "dinein") {
+        const table = document.getElementById("tableNumber").value.trim();
+        if(!table) { isValid = false; alert("Please enter table number"); }
+    } else {
+        const name = document.getElementById("customerName").value.trim();
+        const mobile = document.getElementById("customerMobile").value.trim();
+        const address = document.getElementById("customerAddress").value.trim();
+        if(!name || !mobile || !address) { isValid = false; alert("Please fill all delivery details"); }
+    }
+    if(!isValid) return;
+    
+    let msg = `Hello! I want to order from ${RESTAURANT_INFO.name}:\n\n`;
+    if(deliveryType === "dinein") {
+        msg += `🏠 Dine-in\nTable: ${document.getElementById("tableNumber").value.trim()}\n\n`;
+    } else {
+        msg += `🚚 Home Delivery\nName: ${document.getElementById("customerName").value.trim()}\nMobile: ${document.getElementById("customerMobile").value.trim()}\nAddress: ${document.getElementById("customerAddress").value.trim()}\n\n`;
+    }
+    msg += `Order Details:\n`;
+    let total = 0;
+    cart.forEach(i => { msg += `• ${i.name} x${i.qty} = ₹${i.price * i.qty}\n`; total += i.price * i.qty; });
+    msg += `\nTotal: ₹${total}\n\nThank you!`;
+    window.open(`https://wa.me/${RESTAURANT_INFO.phoneRaw}?text=${encodeURIComponent(msg)}`, "_blank");
+};
+
+document.getElementById("tableNumber")?.addEventListener("input", updateCustomerSummary);
+document.getElementById("customerName")?.addEventListener("input", updateCustomerSummary);
+document.getElementById("customerMobile")?.addEventListener("input", updateCustomerSummary);
+document.getElementById("customerAddress")?.addEventListener("input", updateCustomerSummary);
+
+document.getElementById("search").oninput = (e) => {
+    searchQuery = e.target.value.toLowerCase();
     renderMenu();
+};
+
+renderTabs();
+renderMenu();
 </script>
 </body>
 </html>
